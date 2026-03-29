@@ -1,66 +1,39 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
 
+import Footer from "./components/common/Footer";
+import Header from "./components/common/Header";
+import RecentPosts from "./components/pages/home/RecentPosts";
+import Preloader from "./components/ui/Preloader";
+import TeamArea from "./components/pages/aboutUs/TeamArea";
+import TestimonialsArea from "./components/pages/aboutUs/TestimonialsArea";
+import AboutArea from "./components/pages/aboutUs/AboutArea";
+import ProcessArea from "./components/pages/aboutUs/ProcessArea";
+import StatsArea from "./components/pages/aboutUs/StatsArea";
+import HeroArea from "./components/pages/home/HeroArea";
+import ServicesArea from "./components/pages/home/ServicesArea";
+import ProjectArea from "./components/pages/home/ProjectArea";
+import { recentPostsData } from "./data/homeData";
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <Preloader />
+      <Header />      
+      <HeroArea />
+      <ServicesArea />
+      <AboutArea image="/images/about/1.jpg" />
+      <StatsArea pad="pt-0" />
+      <ProjectArea />
+      <ProcessArea
+        bgColor="ht-process-area "
+        titleColor="text-white"
+        subtitleColor=""
+        descriptionColor="ht-process-item"
+        shape="images/shape/3.1.svg"
+      />
+      <TeamArea />
+      <TestimonialsArea />
+      <RecentPosts data={recentPostsData} variant="v1" pad="pt-0" />
+      <Footer />
+    </>
   );
 }
