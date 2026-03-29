@@ -4,6 +4,12 @@ import Header from "../../components/common/Header";
 import FaqAreas from "../../components/pages/faq/FaqAreas";
 import PricingArea from "../../components/pages/pricing/PricingArea";
 
+export const metadata = {
+  title: "Pricing Plan",
+  description:
+    "Plans and pricing — compare options, features, and FAQs to choose the right fit for you.",
+};
+
 export default function PricingPage() {
   return (
     <>
