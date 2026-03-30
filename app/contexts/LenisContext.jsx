@@ -1,14 +1,21 @@
 "use client";
 
-import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import Lenis from "lenis";
 
 const LenisContext = createContext(null);
 
 export function LenisProvider({ children }) {
-  const [lenis, setLenis] = useState(null);
+  const lenisRef = useRef(null);
   const rafRef = useRef(null);
+  const [, forceRerender] = useState(0);
+  const ctxValue = useMemo(
+    () => ({
+      getLenis: () => lenisRef.current,
+    }),
+    [],
+  );
 
   useEffect(() => {
     const instance = new Lenis({
@@ -16,6 +23,7 @@ export function LenisProvider({ children }) {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
+    lenisRef.current = instance;
 
     const KEY_SCROLL = 100;
     function onKeyDown(e) {
@@ -69,18 +77,21 @@ export function LenisProvider({ children }) {
     }
     rafRef.current = requestAnimationFrame(raf);
 
-    setLenis(instance);
+    const notifyTimer = setTimeout(() => {
+      forceRerender((x) => x + 1);
+    }, 0);
 
     return () => {
+      clearTimeout(notifyTimer);
       window.removeEventListener("keydown", onKeyDown);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       instance.destroy();
-      setLenis(null);
+      lenisRef.current = null;
     };
   }, []);
 
   return (
-    <LenisContext.Provider value={lenis}>
+    <LenisContext.Provider value={ctxValue}>
       {children}
     </LenisContext.Provider>
   );
@@ -91,5 +102,11 @@ LenisProvider.propTypes = {
 };
 
 export function useLenisInstance() {
-  return useContext(LenisContext);
+  const ctx = useContext(LenisContext);
+  if (!ctx) return null;
+
+  // Backwards compatible: if value is the instance itself.
+  if (typeof ctx.getLenis !== "function") return ctx;
+
+  return ctx.getLenis();
 }
