@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Search from "./Search";
 import RecentPosts from "./RecentPosts";
 import Services from "./Services";
@@ -20,7 +21,15 @@ export default function BlogListArea() {
                     <div className="blog-list-item">
                       <div className="thumb">
                         <Link href={post.link}>
-                          <img src={post.image} alt={post.title} />
+                          <Image
+                            src={post.image}
+                            alt={post.title}
+                            width={900}
+                            height={520}
+                            style={{ width: "100%", height: "auto" }}
+                            sizes="(max-width: 991px) 100vw, 66vw"
+                            loading="lazy"
+                          />
                         </Link>
                       </div>
 
@@ -28,7 +37,13 @@ export default function BlogListArea() {
                         <div className="blog-meta">
                           {post.meta.map((item, idx) => (
                             <div className="single-meta" key={idx}>
-                              <img src={item.icon} alt="icon" />
+                              <Image
+                                src={item.icon}
+                                alt="icon"
+                                width={18}
+                                height={18}
+                                style={{ width: "auto", height: "auto" }}
+                              />
                               <span>{item.text}</span>
                             </div>
                           ))}

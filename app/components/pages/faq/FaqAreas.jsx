@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { faqAreaData } from "../../../data/faqData";
+import Image from "next/image";
 
 const AccordionItem = ({ item, isOpen, onToggle }) => {
   return (
@@ -55,7 +56,15 @@ export default function FaqAreas() {
             {/* Image */}
             <div className="col-xl-6 col-lg-6">
               <div className="ht-faq-thumb" data-aos="fade-up" data-aos-delay="300">
-                <img src={image} alt="faq" />
+                <Image
+                  src={image}
+                  alt="faq"
+                  width={860}
+                  height={640}
+                  style={{ width: "100%", height: "auto" }}
+                  sizes="(max-width: 991px) 100vw, 50vw"
+                  priority
+                />
               </div>
             </div>
 

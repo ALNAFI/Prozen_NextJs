@@ -1,5 +1,6 @@
 import { teamDetailsData } from "../../../data/teamAndDetailsData";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function TeamDetailsArea() {
   const { profile, about, skills } = teamDetailsData;
@@ -13,7 +14,15 @@ export default function TeamDetailsArea() {
             <div className="row align-items-center justify-content-between">
               <div className="col-lg-5">
                 <div className="thumb">
-                  <img src={profile.image} alt={profile.name} />
+                  <Image
+                    src={profile.image}
+                    alt={profile.name}
+                    width={720}
+                    height={820}
+                    style={{ width: "100%", height: "auto" }}
+                    sizes="(max-width: 991px) 100vw, 40vw"
+                    priority
+                  />
                 </div>
               </div>
 

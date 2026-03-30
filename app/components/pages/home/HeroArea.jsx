@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, memo } from "react";
 import Link from "next/link";
 import { useCountUp } from "../../../hooks/useCountUp";
 import { HERO_DATA } from "../../../data/homeData";
+import NextImage from "next/image";
 
 const CounterCard = memo(function CounterCard({ value, suffix, label, animationClass }) {
   const { count, countRef } = useCountUp(value, 4000, 500);
@@ -60,12 +61,15 @@ const HeroImage = memo(function HeroImage() {
 
   return (
     <div className="ht-hero-img">
-      <img
+      <NextImage
         data-aos="fade-up"
         data-aos-delay="200"
         src={heroImage.src}
         alt={heroImage.alt}
-        loading="lazy"
+        width={900}
+        height={700}
+        style={{ width: "100%", height: "auto" }}
+        priority
       />
     </div>
   );
@@ -78,7 +82,14 @@ const HeroShape = memo(function HeroShape() {
   return (
     <div className="ht-hero-shape">
       <div className="arrow-shape float-bob-x">
-        <img src={shape.src} alt={shape.alt} loading="lazy" />
+        <NextImage
+          src={shape.src}
+          alt={shape.alt}
+          width={160}
+          height={160}
+          style={{ width: "auto", height: "auto" }}
+          loading="lazy"
+        />
       </div>
     </div>
   );
@@ -107,7 +118,7 @@ const HeroArea = () => {
   const [backgroundStyle, setBackgroundStyle] = useState({});
 
   useEffect(() => {
-    const img = new Image();
+    const img = new window.Image();
     img.src = HERO_DATA.backgroundImage;
     img.onload = () => {
       setBackgroundStyle({

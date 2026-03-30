@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -36,7 +37,15 @@ export default function ServicesArea() {
                 data-aos="fade-up"
                 data-aos-delay={mainThumb.delay}
               >
-                <img src={mainThumb.image} alt="img" />
+                <Image
+                  src={mainThumb.image}
+                  alt="img"
+                  width={520}
+                  height={620}
+                  style={{ width: "100%", height: "auto" }}
+                  sizes="(max-width: 991px) 100vw, 33vw"
+                  priority
+                />
                 <div className="content">
                   <h3>{mainThumb.title}</h3>
                   <Link href={mainThumb.buttonLink}
@@ -65,7 +74,14 @@ export default function ServicesArea() {
                       <i className="fa-solid fa-arrow-right"></i>
                     </Link>
 
-                    <img src={item.image} alt="sm-img" />
+                    <Image
+                      src={item.image}
+                      alt="sm-img"
+                      width={180}
+                      height={180}
+                      style={{ width: "auto", height: "auto" }}
+                      loading="lazy"
+                    />
                   </div>
                 ))}
               </div>
@@ -94,7 +110,14 @@ export default function ServicesArea() {
             <SwiperSlide key={item.id}>
               <div className="brand-item">
                 <h2>{item.text}</h2>
-                <img src="images/icon/9.svg" alt="icon" />
+                <Image
+                  src="/images/icon/9.svg"
+                  alt="icon"
+                  width={22}
+                  height={22}
+                  style={{ width: "auto", height: "auto" }}
+                  loading="lazy"
+                />
               </div>
             </SwiperSlide>
           ))}

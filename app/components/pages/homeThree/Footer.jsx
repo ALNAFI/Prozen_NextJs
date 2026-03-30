@@ -4,14 +4,15 @@ import { useState, useEffect } from "react";
 import { footerSocialLinks } from "../../../data/footerData";
 import { footerMenu } from "../../../data/HomeThreeData";
 import Link from "next/link";
+import NextImage from "next/image";
 
-const FOOTER_BG = "images/footer/bg-3.jpg";
+const FOOTER_BG = "/images/footer/bg-3.jpg";
 
 export default function Footer() {
   const [bgStyle, setBgStyle] = useState({});
 
   useEffect(() => {
-    const img = new Image();
+    const img = new window.Image();
     img.src = FOOTER_BG;
     img.onload = () => {
       setBgStyle({
@@ -28,7 +29,14 @@ export default function Footer() {
       <div className="container">
         <div className="ht-footer-three section-padding">
           <div className="shape float-bob-y">
-            <img src="images/shape/10.svg" alt="shape" />
+            <NextImage
+              src="/images/shape/10.svg"
+              alt="shape"
+              width={180}
+              height={180}
+              style={{ width: "auto", height: "auto" }}
+              loading="lazy"
+            />
           </div>
 
           <div className="row gy-5">
@@ -36,7 +44,13 @@ export default function Footer() {
             <div className="col-xl-5 col-lg-6">
               <div className="ht-footer-info">
                 <Link href="/">
-                  <img src="images/logo/logo-white-2.svg" alt="logo" />
+                  <NextImage
+                    src="/images/logo/logo-white-2.svg"
+                    alt="logo"
+                    width={160}
+                    height={40}
+                    style={{ width: "auto", height: "auto" }}
+                  />
                 </Link>
 
                 <p className="desc">
@@ -79,7 +93,14 @@ export default function Footer() {
 
           <div className="ht-footer-menu">
             <Link href="mailto:prozen@gmail.com">
-              <img src="images/icon/8.svg" alt="icon" /> Prozen@gmail.com
+              <NextImage
+                src="/images/icon/8.svg"
+                alt="icon"
+                width={20}
+                height={20}
+                style={{ width: "auto", height: "auto" }}
+              />{" "}
+              Prozen@gmail.com
             </Link>
 
             <ul className="menu-list">

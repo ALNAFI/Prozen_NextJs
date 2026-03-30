@@ -2,6 +2,7 @@
 
 import { memo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useCountUp } from "../../../hooks/useCountUp";
 import { aboutAreaData } from "../../../data/homeTwoData";
 
@@ -57,7 +58,15 @@ export default function AboutArea() {
                 data-aos="fade-up"
                 data-aos-delay={image.delay}
               >
-                <img src={image.src} alt={image.alt} />
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={860}
+                  height={640}
+                  style={{ width: "100%", height: "auto" }}
+                  sizes="(max-width: 991px) 100vw, 50vw"
+                  priority
+                />
 
                 <ReviewCounter review={image.review} />
               </div>

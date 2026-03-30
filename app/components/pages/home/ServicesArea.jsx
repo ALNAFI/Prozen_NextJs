@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { servicesData } from "../../../data/homeData";
+import Image from "next/image";
 
 export default function ServicesArea() {
   return (
@@ -27,16 +28,27 @@ export default function ServicesArea() {
               >
                 <div className="ht-services-items mt-30">
                   <div className="icon">
-                    <img src={service.icon} alt="icon" />
+                    <Image
+                      src={service.icon}
+                      alt="icon"
+                      width={64}
+                      height={64}
+                      style={{ width: "auto", height: "auto" }}
+                      loading="lazy"
+                    />
                   </div>
 
                   <Link href="/service-details">
                     <h3 className="title">
                       {service.title}{" "}
-                      <img
+                      <Image
                         className={service.arrowClass}
-                        src="images/icon/arrow-up.svg"
+                        src="/images/icon/arrow-up.svg"
                         alt="arrow"
+                        width={24}
+                        height={24}
+                        style={{ width: "auto", height: "auto" }}
+                        loading="lazy"
                       />
                     </h3>
                   </Link>

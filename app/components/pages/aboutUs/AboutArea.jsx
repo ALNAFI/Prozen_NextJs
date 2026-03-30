@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { aboutData } from "../../../data/aboutUsData";
+import Image from "next/image";
 
 export default function AboutArea({ image }) {
   const { subtitle, title, description, button } = aboutData;
@@ -16,7 +17,15 @@ export default function AboutArea({ image }) {
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                <img src={image} alt="about" />
+                <Image
+                  src={image}
+                  alt="about"
+                  width={860}
+                  height={640}
+                  style={{ width: "100%", height: "auto" }}
+                  sizes="(max-width: 991px) 100vw, 50vw"
+                  priority
+                />
               </div>
             </div>
             {/* Content */}

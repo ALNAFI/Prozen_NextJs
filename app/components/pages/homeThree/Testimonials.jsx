@@ -6,6 +6,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { testimonialsData } from "../../../data/HomeThreeData";
+import Image from "next/image";
 
 export default function Testimonials() {
   const { bgShape, icon, testimonials } = testimonialsData;
@@ -44,7 +45,14 @@ export default function Testimonials() {
     <section className="ht-testimonials-area-2 section-padding fix">
       {/* Background shape */}
       <div className="bg-shape">
-        <img src={bgShape} alt="shape" />
+        <Image
+          src={bgShape}
+          alt="shape"
+          width={520}
+          height={520}
+          style={{ width: "auto", height: "auto" }}
+          loading="lazy"
+        />
       </div>
 
       <div className="container">
@@ -71,7 +79,13 @@ export default function Testimonials() {
                   <SwiperSlide key={item.id}>
                     <div className="testimonial-slides-item">
                         <div className="icon">
-                          <img src={icon} alt="icon" />
+                          <Image
+                            src={icon}
+                            alt="icon"
+                            width={48}
+                            height={48}
+                            style={{ width: "auto", height: "auto" }}
+                          />
                         </div>
 
                         <p>“{item.text}”</p>

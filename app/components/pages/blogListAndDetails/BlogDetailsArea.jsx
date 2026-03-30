@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import Tags from "./Tags";
 import Services from "./Services";
 import RecentPosts from "./RecentPosts";
@@ -23,14 +24,28 @@ export default function BlogDetailsArea() {
               {/* Hero */}
               <div className="blog-single-post">
                 <div className="thumb">
-                  <img src={hero.image} alt={hero.title} />
+                  <Image
+                    src={hero.image}
+                    alt={hero.title}
+                    width={900}
+                    height={520}
+                    style={{ width: "100%", height: "auto" }}
+                    sizes="(max-width: 991px) 100vw, 66vw"
+                    priority
+                  />
                 </div>
 
                 <div className="content">
                   <div className="blog-meta">
                     {hero.meta.map((m, i) => (
                       <div className="single-meta" key={i}>
-                        <img src={m.icon} alt="icon" />
+                        <Image
+                          src={m.icon}
+                          alt="icon"
+                          width={18}
+                          height={18}
+                          style={{ width: "auto", height: "auto" }}
+                        />
                         <span>{m.text}</span>
                       </div>
                     ))}
@@ -49,7 +64,13 @@ export default function BlogDetailsArea() {
               {/* Quote */}
               <div className="qoute">
                 <div className="icon">
-                  <img src="/images/icon/10.svg" alt="icon" />
+                  <Image
+                    src="/images/icon/10.svg"
+                    alt="icon"
+                    width={42}
+                    height={42}
+                    style={{ width: "auto", height: "auto" }}
+                  />
                 </div>
                 <p>{quote}</p>
               </div>
@@ -59,7 +80,14 @@ export default function BlogDetailsArea() {
                 {gallery.map((img, i) => (
                   <div className="col-md-6" key={i}>
                     <div className="details-img">
-                      <img src={img} alt="blog" />
+                      <Image
+                        src={img}
+                        alt="blog"
+                        width={860}
+                        height={540}
+                        style={{ width: "100%", height: "auto" }}
+                        sizes="(max-width: 767px) 100vw, 50vw"
+                      />
                     </div>
                   </div>
                 ))}
@@ -95,7 +123,13 @@ export default function BlogDetailsArea() {
               {/* Author */}
               <div className="blog-details-author">
                 <div className="thumb">
-                  <img src={author.image} alt={author.name} />
+                  <Image
+                    src={author.image}
+                    alt={author.name}
+                    width={120}
+                    height={120}
+                    style={{ width: "auto", height: "auto" }}
+                  />
                 </div>
                 <div className="content">
                   <h3>{author.name}</h3>
@@ -111,14 +145,27 @@ export default function BlogDetailsArea() {
                   {comments.map((c) => (
                     <div className="single-comment" key={c.id}>
                       <div className="thumb">
-                        <img src={c.image} alt={c.name} />
+                        <Image
+                          src={c.image}
+                          alt={c.name}
+                          width={90}
+                          height={90}
+                          style={{ width: "auto", height: "auto" }}
+                        />
                       </div>
                       <div className="content">
                         <p>{c.text}</p>
                         <h5>{c.name}</h5>
                         <p className="dt">{c.date}</p>
                         <Link href="#" className="reply">
-                          <img src="/images/icon/11.svg" alt="icon" /> Reply
+                          <Image
+                            src="/images/icon/11.svg"
+                            alt="icon"
+                            width={18}
+                            height={18}
+                            style={{ width: "auto", height: "auto" }}
+                          />{" "}
+                          Reply
                         </Link>
                       </div>
                     </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function ContactInfo() {
@@ -13,7 +14,14 @@ export default function ContactInfo() {
             >
               <div className="contact-info-item">
                 <div className="icon">
-                  <img src="images/icon/phone.svg" alt="icon" />
+                  <Image
+                    src="/images/icon/phone.svg"
+                    alt="icon"
+                    width={42}
+                    height={42}
+                    style={{ width: "auto", height: "auto" }}
+                    loading="lazy"
+                  />
                 </div>
                 <div className="content">
                   <span>Phone number</span>
@@ -28,7 +36,14 @@ export default function ContactInfo() {
             >
               <div className="contact-info-item">
                 <div className="icon">
-                  <img src="images/icon/comment.svg" alt="icon" />
+                  <Image
+                    src="/images/icon/comment.svg"
+                    alt="icon"
+                    width={42}
+                    height={42}
+                    style={{ width: "auto", height: "auto" }}
+                    loading="lazy"
+                  />
                 </div>
                 <div className="content">
                   <span>Email address</span>
@@ -45,7 +60,14 @@ export default function ContactInfo() {
             >
               <div className="contact-info-item">
                 <div className="icon">
-                  <img src="images/icon/location.svg" alt="icon" />
+                  <Image
+                    src="/images/icon/location.svg"
+                    alt="icon"
+                    width={42}
+                    height={42}
+                    style={{ width: "auto", height: "auto" }}
+                    loading="lazy"
+                  />
                 </div>
                 <div className="content">
                   <span>Office Address</span>

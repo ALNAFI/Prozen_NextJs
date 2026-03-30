@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { teamData } from "../../../data/teamAndDetailsData";
+import Image from "next/image";
 
 export default function TeamArea() {
   return (
@@ -17,9 +18,14 @@ export default function TeamArea() {
                 <div className="ht-team-items">
                   <div className="ht-team-thumb">
                     <Link href="/team-details">
-                      <img
+                      <Image
                         src={member.image}
                         alt={member.name}
+                        width={420}
+                        height={520}
+                        style={{ width: "100%", height: "auto" }}
+                        sizes="(max-width: 991px) 100vw, 25vw"
+                        loading="lazy"
                       />
                     </Link>
 

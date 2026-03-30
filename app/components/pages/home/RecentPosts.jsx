@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import PropTypes from "prop-types";
 import { useMemo } from "react";
 
@@ -52,7 +53,14 @@ export default function RecentPosts({
                 <div className="ht-blog-item mt-20">
                   <div className="ht-blog-thumb">
                     <Link href={post.link}>
-                      <img src={post.image} alt={post.title} />
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        width={860}
+                        height={540}
+                        style={{ width: "100%", height: "auto" }}
+                        sizes="(max-width: 991px) 100vw, 33vw"
+                      />
                     </Link>
                   </div>
                   <div className="ht-blog-content">

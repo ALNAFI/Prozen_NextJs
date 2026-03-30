@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { chooseData } from "../../../data/aboutUsData";
+import Image from "next/image";
 
 export default function ChooseArea() {
   const { left, benefits } = chooseData;
@@ -38,7 +39,15 @@ export default function ChooseArea() {
                   data-aos="fade-up"
                   data-aos-delay="800"
                 >
-                  <img src={left.image} alt="choose" />
+                  <Image
+                    src={left.image}
+                    alt="choose"
+                    width={860}
+                    height={640}
+                    style={{ width: "100%", height: "auto" }}
+                    sizes="(max-width: 991px) 100vw, 60vw"
+                    loading="lazy"
+                  />
                 </div>
               </div>
             </div>
@@ -54,7 +63,14 @@ export default function ChooseArea() {
                     data-aos-delay={item.delay}
                   >
                     <div className="icon">
-                      <img src={item.icon} alt={item.title} />
+                      <Image
+                        src={item.icon}
+                        alt={item.title}
+                        width={56}
+                        height={56}
+                        style={{ width: "auto", height: "auto" }}
+                        loading="lazy"
+                      />
                     </div>
                     <div className="content">
                       <h3>{item.title}</h3>

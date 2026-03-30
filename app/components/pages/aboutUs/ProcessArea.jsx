@@ -1,4 +1,5 @@
 import { processData } from "../../../data/aboutUsData";
+import Image from "next/image";
 
 export default function ProcessArea({
   bgColor = "",
@@ -13,7 +14,14 @@ export default function ProcessArea({
     <section className={`fix section-padding ${bgColor}`}>
       {/* Shape */}
       <div className="ht-process-shape">
-        <img src={shape} alt="shape" />
+        <Image
+          src={shape}
+          alt="shape"
+          width={260}
+          height={260}
+          style={{ width: "auto", height: "auto" }}
+          loading="lazy"
+        />
       </div>
 
       <div className="container">

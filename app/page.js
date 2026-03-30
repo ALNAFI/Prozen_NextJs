@@ -1,6 +1,7 @@
 import Home from "./(pages)/home/Home";
 
 
+
 export const metadata = {
   title: "Main Home",
   description:

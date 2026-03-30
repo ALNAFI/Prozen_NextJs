@@ -1,4 +1,5 @@
 import { projectDetailsData } from "../../../data/projectDetailsData";
+import Image from "next/image";
 
 export default function ProjectContent() {
   const {
@@ -17,7 +18,15 @@ export default function ProjectContent() {
         <div className="project-details-wrapper">
           {/* Thumbnail */}
           <div className="thumbnails">
-            <img src={mainImage} alt={title} />
+            <Image
+              src={mainImage}
+              alt={title}
+              width={1200}
+              height={700}
+              style={{ width: "100%", height: "auto" }}
+              sizes="(max-width: 991px) 100vw, 1200px"
+              priority
+            />
           </div>
 
           <div className="row">
@@ -37,7 +46,15 @@ export default function ProjectContent() {
                   {gallery.map((img, index) => (
                     <div className="col-md-6" key={index}>
                       <div className="project-thumbs">
-                        <img src={img} alt="project" />
+                        <Image
+                          src={img}
+                          alt="project"
+                          width={860}
+                          height={540}
+                          style={{ width: "100%", height: "auto" }}
+                          sizes="(max-width: 767px) 100vw, 50vw"
+                          loading="lazy"
+                        />
                       </div>
                     </div>
                   ))}
@@ -65,7 +82,14 @@ export default function ProjectContent() {
                   {sidebarInfo.map((item, index) => (
                     <div className="single-widget" key={index}>
                       <div className="icon">
-                        <img src={item.icon} alt={item.label} />
+                        <Image
+                          src={item.icon}
+                          alt={item.label}
+                          width={42}
+                          height={42}
+                          style={{ width: "auto", height: "auto" }}
+                          loading="lazy"
+                        />
                       </div>
                       <div className="info">
                         <span>{item.label}</span>

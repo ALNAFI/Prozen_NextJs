@@ -1,4 +1,5 @@
 import { processAreaData } from "../../../data/HomeThreeData";
+import Image from "next/image";
 
 export default function ProcessArea() {
   const { section, items, circleImage } = processAreaData;
@@ -28,10 +29,23 @@ export default function ProcessArea() {
               >
                 <div className="process-item">
                   <div className="thumb">
-                    <img src={item.image} alt="process-img" />
+                    <Image
+                      src={item.image}
+                      alt="process-img"
+                      width={520}
+                      height={520}
+                      style={{ width: "100%", height: "auto" }}
+                      sizes="(max-width: 767px) 100vw, 25vw"
+                    />
 
                     <div className="circle">
-                      <img src={circleImage} alt="circle" />
+                      <Image
+                        src={circleImage}
+                        alt="circle"
+                        width={120}
+                        height={120}
+                        style={{ width: "auto", height: "auto" }}
+                      />
                     </div>
 
                     <span className={item.stepClass || ""}>
@@ -40,7 +54,13 @@ export default function ProcessArea() {
 
                     {item.arrow && (
                       <div className="step-arrow">
-                        <img src={item.arrow} alt="arrow-icon" />
+                        <Image
+                          src={item.arrow}
+                          alt="arrow-icon"
+                          width={40}
+                          height={40}
+                          style={{ width: "auto", height: "auto" }}
+                        />
                       </div>
                     )}
                   </div>

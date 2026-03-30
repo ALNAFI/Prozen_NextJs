@@ -67,7 +67,7 @@ export const recentPostsData = {
   posts: [
     {
       id: 1,
-      image: "images/blog/10.jpg",
+      image: "/images/blog/10.jpg",
       date: "June 16, 2024",
       category: "Business",
       titleLine1: "Travel insurance tips for",
@@ -77,7 +77,7 @@ export const recentPostsData = {
     },
     {
       id: 2,
-      image: "images/blog/11.jpg",
+      image: "/images/blog/11.jpg",
       date: "June 16, 2024",
       category: "Business",
       titleLine1: "Back-to-school coverage",
@@ -87,7 +87,7 @@ export const recentPostsData = {
     },
     {
       id: 3,
-      image: "images/blog/12.jpg",
+      image: "/images/blog/12.jpg",
       date: "June 16, 2024",
       category: "Business",
       titleLine1: "Tips for handling a car",
@@ -98,8 +98,8 @@ export const recentPostsData = {
   ],
 };
 export const testimonialsData = {
-  bgShape: "images/shape/8.svg",
-  icon: "images/icon/5.svg",
+  bgShape: "/images/shape/8.svg",
+  icon: "/images/icon/5.svg",
 
   testimonials: [
     {
@@ -129,7 +129,7 @@ export const servicesInsuranceData = {
   services: [
     {
       id: 1,
-      icon: "images/icon/4.svg",
+      icon: "/images/icon/4.svg",
       title: "Health Insurance",
       desc:
         "With our innovative consulting today's breakthroughs become the leadership strategies propelling your",
@@ -138,7 +138,7 @@ export const servicesInsuranceData = {
     },
     {
       id: 2,
-      icon: "images/icon/4.svg",
+      icon: "/images/icon/4.svg",
       title: "Home Insurance",
       desc:
         "With our innovative consulting today's breakthroughs become the leadership strategies propelling your",
@@ -147,7 +147,7 @@ export const servicesInsuranceData = {
     },
     {
       id: 3,
-      icon: "images/icon/4.svg",
+      icon: "/images/icon/4.svg",
       title: "Travel Insurance",
       desc:
         "With our innovative consulting today's breakthroughs become the leadership strategies propelling your",
@@ -165,34 +165,34 @@ export const processAreaData = {
     title2: "your ideal plan",
   },
 
-  circleImage: "images/shape/9.svg",
+  circleImage: "/images/shape/9.svg",
 
   items: [
     {
       id: 1,
       step: "1",
-      image: "images/process/1.jpg",
+      image: "/images/process/1.jpg",
       title: "Talk to an Advisor",
       desc:
         "Credibly conceptualize multifunctional human capital after that awesome revenue superior scenarios.",
-      arrow: "images/icon/6.svg",
+      arrow: "/images/icon/6.svg",
       delay: 300,
     },
     {
       id: 2,
       step: "2",
       stepClass: "nth",
-      image: "images/process/2.jpg",
+      image: "/images/process/2.jpg",
       title: "Get a Quote",
       desc:
         "Credibly conceptualize multifunctional human capital after that awesome revenue superior scenarios.",
-      arrow: "images/icon/7.svg",
+      arrow: "/images/icon/7.svg",
       delay: 600,
     },
     {
       id: 3,
       step: "3",
-      image: "images/process/3.jpg",
+      image: "/images/process/3.jpg",
       title: "Relax & Sleep Easy",
       desc:
         "Credibly conceptualize multifunctional human capital after that awesome revenue superior scenarios.",

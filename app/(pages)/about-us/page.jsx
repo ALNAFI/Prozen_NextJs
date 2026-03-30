@@ -25,7 +25,7 @@ export default function AboutUsPage() {
         titleColor=""
         subtitleColor=""
         descriptionColor="ht-process-item two"
-        shape="images/shape/3.svg"
+        shape="/images/shape/3.svg"
       />
       <StatsArea />
       <ChooseArea />

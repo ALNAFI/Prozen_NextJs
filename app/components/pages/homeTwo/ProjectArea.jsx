@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { projectAreaData } from "../../../data/homeTwoData";
+import Image from "next/image";
 
 export default function ProjectArea() {
   const { section, topButton, projects, bottomButton } = projectAreaData;
@@ -40,7 +41,15 @@ export default function ProjectArea() {
                 <div className="single-item">
                   <div className="thumb">
                     <Link href={item.link}>
-                      <img src={item.image} alt={item.title} />
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        width={900}
+                        height={650}
+                        style={{ width: "100%", height: "auto" }}
+                        sizes="(max-width: 991px) 100vw, 50vw"
+                        loading="lazy"
+                      />
                     </Link>
                   </div>
 

@@ -3,6 +3,7 @@
 import { memo } from "react";
 import { useCountUp } from "../../../hooks/useCountUp";
 import { statsData } from "../../../data/homeTwoData";
+import Image from "next/image";
 
 const StatItem = memo(function StatItem({ item }) {
   const { count, countRef } = useCountUp(item.count, 4000, 0);
@@ -31,10 +32,24 @@ export default function StatsArea() {
       {/* Shapes */}
       <div className="shape">
         <div className="up">
-          <img src={shape.up} alt="shape" />
+          <Image
+            src={shape.up}
+            alt="shape"
+            width={260}
+            height={260}
+            style={{ width: "auto", height: "auto" }}
+            priority
+          />
         </div>
         <div className="down">
-          <img src={shape.down} alt="shape" />
+          <Image
+            src={shape.down}
+            alt="shape"
+            width={260}
+            height={260}
+            style={{ width: "auto", height: "auto" }}
+            priority
+          />
         </div>
       </div>
 

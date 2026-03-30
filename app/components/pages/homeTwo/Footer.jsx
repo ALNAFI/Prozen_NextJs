@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useInputForm } from "../../../hooks/useInputForm";
 import {
   footerQuickLinks,
@@ -23,7 +24,13 @@ export default function Footer() {
             <div className="col-xl-4">
               <div className="ht-footer-info" data-aos="fade-up" data-aos-delay="300">
                 <Link href="/">
-                  <img src="images/logo/logo-white-2.svg" alt="logo" />
+                  <Image
+                    src="/images/logo/logo-white-2.svg"
+                    alt="logo"
+                    width={160}
+                    height={40}
+                    style={{ width: "auto", height: "auto" }}
+                  />
                 </Link>
 
                 <p className="desc">

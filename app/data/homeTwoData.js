@@ -1,7 +1,7 @@
 export const statsData = {
   shape: {
-    up: "images/shape/5.svg",
-    down: "images/shape/6.svg",
+    up: "/images/shape/5.svg",
+    down: "/images/shape/6.svg",
   },
   items: [
     {
@@ -35,7 +35,7 @@ export const servicesAreaData = {
   },
 
   mainThumb: {
-    image: "images/service/1.jpg",
+    image: "/images/service/1.jpg",
     title: "Elevate Your Marketing Strategy",
     buttonText: "view all services",
     buttonLink: "/service",
@@ -47,7 +47,7 @@ export const servicesAreaData = {
       id: 1,
       title: "Business Planning Solutions",
       desc: "The first thing to remember about success is that it is a process nothing more, nothing less. There is really no magic to it and it's.",
-      image: "images/service/2.jpg",
+      image: "/images/service/2.jpg",
       link: "/service-details",
       delay: 200,
     },
@@ -55,7 +55,7 @@ export const servicesAreaData = {
       id: 2,
       title: "Performance analysis",
       desc: "The first thing to remember about success is that it is a process nothing more, nothing less. There is really no magic to it and it's.",
-      image: "images/service/2.jpg",
+      image: "/images/service/2.jpg",
       link: "/service-details",
       delay: 400,
     },
@@ -63,7 +63,7 @@ export const servicesAreaData = {
       id: 3,
       title: "Tax file audit Strategies",
       desc: "The first thing to remember about success is that it is a process nothing more, nothing less. There is really no magic to it and it's.",
-      image: "images/service/2.jpg",
+      image: "/images/service/2.jpg",
       link: "/service-details",
       delay: 600,
     },
@@ -80,7 +80,7 @@ export const servicesAreaData = {
 };
 export const aboutAreaData = {
   image: {
-    src: "images/about/2.jpg",
+    src: "/images/about/2.jpg",
     alt: "about image",
     delay: 200,
     review: {
@@ -136,7 +136,7 @@ export const teamAreaData = {
       id: 1,
       name: "Linda F. Collins",
       role: "SR Marketer",
-      image: "images/team/5.jpg",
+      image: "/images/team/5.jpg",
       link: "/team-details",
       delay: 200,
     },
@@ -144,7 +144,7 @@ export const teamAreaData = {
       id: 2,
       name: "Sandra D. Rainey",
       role: "Executive officer",
-      image: "images/team/6.jpg",
+      image: "/images/team/6.jpg",
       link: "/team-details",
       delay: 400,
     },
@@ -152,7 +152,7 @@ export const teamAreaData = {
       id: 3,
       name: "Brooklyn Simmons",
       role: "CEO & Founder",
-      image: "images/team/7.jpg",
+      image: "/images/team/7.jpg",
       link: "/team-details",
       delay: 600,
     },
@@ -160,7 +160,7 @@ export const teamAreaData = {
       id: 4,
       name: "Donna L. Aguilar",
       role: "Finance advisor",
-      image: "images/team/8.jpg",
+      image: "/images/team/8.jpg",
       link: "/team-details",
       delay: 800,
     },
@@ -190,7 +190,7 @@ export const projectAreaData = {
   projects: [
     {
       id: 1,
-      image: "images/project/5.jpg",
+      image: "/images/project/5.jpg",
       title: "Business consultancy",
       category: "UI/UX Design",
       link: "/project-details",
@@ -198,7 +198,7 @@ export const projectAreaData = {
     },
     {
       id: 2,
-      image: "images/project/6.jpg",
+      image: "/images/project/6.jpg",
       title: "Crafting Digital Experiences",
       category: "Web Design",
       link: "/project-details",
@@ -206,7 +206,7 @@ export const projectAreaData = {
     },
     {
       id: 3,
-      image: "images/project/7.jpg",
+      image: "/images/project/7.jpg",
       title: "Innovation in Every Swipe",
       category: "Development",
       link: "/project-details",
@@ -214,7 +214,7 @@ export const projectAreaData = {
     },
     {
       id: 4,
-      image: "images/project/8.jpg",
+      image: "/images/project/8.jpg",
       title: "Turning Clicks Into Conversions",
       category: "Digital Marketing",
       link: "/project-details",
@@ -239,7 +239,7 @@ export const recentPostsPage2Data = {
   posts: [
     {
       id: 1,
-      image: "images/blog/4.jpg",
+      image: "/images/blog/4.jpg",
       date: "June 16, 2024",
       category: "Business solution",
       title: "Profitable business makes to you happy and growth",
@@ -248,7 +248,7 @@ export const recentPostsPage2Data = {
     },
     {
       id: 2,
-      image: "images/blog/5.jpg",
+      image: "/images/blog/5.jpg",
       date: "27 May, 2024",
       category: "Marketing solution",
       title: "Securing Funding for Your Startup: Expert Tips",
@@ -257,7 +257,7 @@ export const recentPostsPage2Data = {
     },
     {
       id: 3,
-      image: "images/blog/6.jpg",
+      image: "/images/blog/6.jpg",
       date: "June 16, 2024",
       category: "Business solution",
       title: "Strong Corporate Financial Model: Best Practices",

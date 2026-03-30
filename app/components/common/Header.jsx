@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import TopHeader from "./TopHeader";
 import { headerMenuData } from "../../data/headerMenuData";
@@ -25,9 +26,13 @@ export default function Header() {
               {/* Logo */}
               <div className="ht-menu-logo">
                 <Link href="/">
-                  <img
+                  <Image
                     src="/images/logo/logo.svg"
                     alt="logo"
+                    width={160}
+                    height={40}
+                    style={{ width: "auto", height: "auto" }}
+                    priority
                   />
                 </Link>
               </div>

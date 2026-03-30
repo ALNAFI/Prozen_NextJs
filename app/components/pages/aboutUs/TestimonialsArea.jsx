@@ -6,6 +6,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { testimonialsAreaData } from "../../../data/aboutUsData";
+import Image from "next/image";
 
 export default function TestimonialsArea() {
   const { section, items } = testimonialsAreaData;
@@ -120,7 +121,13 @@ export default function TestimonialsArea() {
 
                           <div className="ht-testimonials-author">
                             <div className="avatar">
-                              <img src={item.avatar} alt={item.name} />
+                              <Image
+                                src={item.avatar}
+                                alt={item.name}
+                                width={80}
+                                height={80}
+                                style={{ width: "auto", height: "auto" }}
+                              />
                             </div>
                             <div className="author-info">
                               <h5 className="name">{item.name}</h5>

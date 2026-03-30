@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { projectData } from "../../../data/projectData";
+import Image from "next/image";
 export default function ProjectCards() {
   return (
     <div className="ht-project-area section-padding">
@@ -16,7 +17,15 @@ export default function ProjectCards() {
                 <div className="single-item v2">
                   <div className="thumb">
                     <Link href={project.link}>
-                      <img src={project.image} alt={project.title} />
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={900}
+                        height={650}
+                        style={{ width: "100%", height: "auto" }}
+                        sizes="(max-width: 991px) 100vw, 33vw"
+                        loading="lazy"
+                      />
                     </Link>
 
                     <div className="content">
@@ -28,7 +37,14 @@ export default function ProjectCards() {
                         <p>{project.category}</p>
 
                         <Link href={project.link}>
-                          <img src="/images/icon/arrow-up.svg" alt="icon" />
+                          <Image
+                            src="/images/icon/arrow-up.svg"
+                            alt="icon"
+                            width={24}
+                            height={24}
+                            style={{ width: "auto", height: "auto" }}
+                            loading="lazy"
+                          />
                         </Link>
                       </div>
                     </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getCurrentYear } from "../../utils/getCurrentYear";
 import { footerMenus, footerSocialLinks } from "../../data/footerData";
 export default function Footer() {
@@ -9,7 +10,13 @@ export default function Footer() {
         <div className="ht-footer-top-wrapper">
           <div className="ht-footer-top-left">
             <Link href="/">
-              <img src="/images/logo/logo-white.svg" alt="logo" />
+              <Image
+                src="/images/logo/logo-white.svg"
+                alt="logo"
+                width={160}
+                height={40}
+                style={{ width: "auto", height: "auto" }}
+              />
             </Link>
             <p className="desc">
               At the core of our ethos lies a dedication to our clients.

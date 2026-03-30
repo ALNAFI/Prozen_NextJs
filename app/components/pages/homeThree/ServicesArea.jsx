@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { servicesInsuranceData } from "../../../data/HomeThreeData";
+import Image from "next/image";
 
 export default function ServicesArea() {
   const { section, services } = servicesInsuranceData;
@@ -29,7 +30,14 @@ export default function ServicesArea() {
               >
                 <div className="ht-services-items mt-25">
                   <div className="icon">
-                    <img src={item.icon} alt="icon" />
+                    <Image
+                      src={item.icon}
+                      alt="icon"
+                      width={64}
+                      height={64}
+                      style={{ width: "auto", height: "auto" }}
+                      loading="lazy"
+                    />
                   </div>
 
                   <Link href={item.link}>

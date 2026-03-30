@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { blogData } from "../../../data/blogData";
 
 export default function BlogArea() {
@@ -17,7 +18,15 @@ export default function BlogArea() {
                 <div className="ht-blog-item v2 mt-20">
                   <div className="ht-blog-thumb">
                     <Link href={blog.link}>
-                      <img src={blog.image} alt={blog.title} />
+                      <Image
+                        src={blog.image}
+                        alt={blog.title}
+                        width={860}
+                        height={540}
+                        style={{ width: "100%", height: "auto" }}
+                        sizes="(max-width: 991px) 100vw, 33vw"
+                        loading="lazy"
+                      />
                     </Link>
                   </div>
 

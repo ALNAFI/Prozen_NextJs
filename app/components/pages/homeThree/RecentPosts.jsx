@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { recentPostsData } from "../../../data/HomeThreeData";
+import Image from "next/image";
 
 export default function RecentPosts() {
   const { section, posts } = recentPostsData;
@@ -44,7 +45,15 @@ export default function RecentPosts() {
                   >
                     <div className="thumb">
                       <Link href={post.link}>
-                        <img src={post.image} alt={post.titleLine1} />
+                        <Image
+                          src={post.image}
+                          alt={post.titleLine1}
+                          width={420}
+                          height={280}
+                          style={{ width: "100%", height: "auto" }}
+                          sizes="(max-width: 991px) 100vw, 50vw"
+                          loading="lazy"
+                        />
                       </Link>
                     </div>
 

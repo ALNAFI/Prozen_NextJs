@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { recentPostsData } from "../../../data/blogListAndDetailsData";
 
 export default function RecentPosts() {
@@ -9,7 +10,14 @@ export default function RecentPosts() {
         {recentPostsData.map((post) => (
           <div className="recent-post" key={post.id}>
             <div className="thumb">
-              <img src={post.image} alt={post.title} />
+              <Image
+                src={post.image}
+                alt={post.title}
+                width={90}
+                height={90}
+                style={{ width: "auto", height: "auto" }}
+                loading="lazy"
+              />
             </div>
             <div className="content">
               <Link href={post.link}>

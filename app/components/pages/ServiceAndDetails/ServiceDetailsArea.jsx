@@ -2,6 +2,7 @@
 import Services from '../blogListAndDetails/Services'
 import { servicesData } from "../../../data/serviceAndDetailsData";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ServiceDetailsArea() {
   return (
@@ -14,7 +15,14 @@ export default function ServiceDetailsArea() {
                             <Services servicesData={servicesData} />
                             <div className="single-contact">
                                 <div className="icon">
-                                    <img src="images/icon/16.svg" alt="icon"/>
+                                    <Image
+                                      src="/images/icon/16.svg"
+                                      alt="icon"
+                                      width={42}
+                                      height={42}
+                                      style={{ width: "auto", height: "auto" }}
+                                      loading="lazy"
+                                    />
                                 </div>
                                 <div className="content">
                                     <h3>Don&apos;t hesitate to contact us</h3>
@@ -26,7 +34,15 @@ export default function ServiceDetailsArea() {
                     </div>
                     <div className="col-lg-8">
                         <div className="service-details-thumb">
-                            <img src="images/service/3.jpg" alt="thumb-service"/>
+                            <Image
+                              src="/images/service/3.jpg"
+                              alt="thumb-service"
+                              width={1200}
+                              height={700}
+                              style={{ width: "100%", height: "auto" }}
+                              sizes="(max-width: 991px) 100vw, 66vw"
+                              priority
+                            />
                         </div>
                         <div className="service-details-content">
                             <h2 className="mb-12">service-details-thumb</h2>
@@ -55,12 +71,28 @@ export default function ServiceDetailsArea() {
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="service-thumbs">
-                                        <img src="images/service/4.jpg" alt=""/>
+                                        <Image
+                                          src="/images/service/4.jpg"
+                                          alt=""
+                                          width={860}
+                                          height={540}
+                                          style={{ width: "100%", height: "auto" }}
+                                          sizes="(max-width: 767px) 100vw, 50vw"
+                                          loading="lazy"
+                                        />
                                     </div>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="service-thumbs">
-                                        <img src="images/service/5.jpg" alt=""/>
+                                        <Image
+                                          src="/images/service/5.jpg"
+                                          alt=""
+                                          width={860}
+                                          height={540}
+                                          style={{ width: "100%", height: "auto" }}
+                                          sizes="(max-width: 767px) 100vw, 50vw"
+                                          loading="lazy"
+                                        />
                                     </div>
                                 </div>
                             </div>

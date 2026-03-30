@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useOffcanvas } from "../../contexts/OffcanvasContext";
 import { offcanvasInfo, socialLinks } from "../../data/offcanvasData";
@@ -24,7 +25,14 @@ export default function Offcanvas() {
           {/* Header */}
           <div className="ht-offcanvas-header mb-50">
             <Link href="/" className="ht-offcanvas-logo">
-              <img src="/images/logo/logo.svg" alt="logo" />
+              <Image
+                src="/images/logo/logo.svg"
+                alt="logo"
+                width={160}
+                height={40}
+                style={{ width: "auto", height: "auto" }}
+                priority
+              />
             </Link>
 
             <button

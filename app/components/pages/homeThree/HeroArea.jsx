@@ -2,16 +2,17 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import NextImage from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const HERO_BG = "images/hero/hero-bg-3.jpg";
+const HERO_BG = "/images/hero/hero-bg-3.jpg";
 const HERO_SLIDES = [
-  { id: 1, src: "images/hero/3.jpg", alt: "Hero" },
-  { id: 2, src: "images/hero/3.jpg", alt: "Hero" },
-  { id: 3, src: "images/hero/3.jpg", alt: "Hero" },
+  { id: 1, src: "/images/hero/3.jpg", alt: "Hero" },
+  { id: 2, src: "/images/hero/3.jpg", alt: "Hero" },
+  { id: 3, src: "/images/hero/3.jpg", alt: "Hero" },
 ];
 
 export default function HeroArea() {
@@ -21,7 +22,7 @@ export default function HeroArea() {
   const swiperRef = useRef(null);
 
   useEffect(() => {
-    const img = new Image();
+    const img = new window.Image();
     img.src = HERO_BG;
     img.onload = () => {
       setBgStyle({
@@ -76,7 +77,14 @@ export default function HeroArea() {
     <section className="ht-hero-area hero-3" style={bgStyle}>
       <div className="ht-hero-shape">
         <div className="arrow-shape-3 float-bob-y">
-          <img src="images/shape/7.svg" alt="shape" />
+              <NextImage
+            src="/images/shape/7.svg"
+            alt="shape"
+            width={180}
+            height={180}
+            style={{ width: "auto", height: "auto" }}
+            priority
+          />
         </div>
       </div>
       <div className="container">
@@ -114,7 +122,15 @@ export default function HeroArea() {
               {HERO_SLIDES.map((slide) => (
                 <SwiperSlide key={slide.id}>
                   <div className="thumb">
-                    <img src={slide.src} alt={slide.alt} />
+                    <NextImage
+                      src={slide.src}
+                      alt={slide.alt}
+                      width={820}
+                      height={520}
+                      style={{ width: "100%", height: "auto" }}
+                      sizes="(max-width: 991px) 100vw, 50vw"
+                      priority={slide.id === 1}
+                    />
                   </div>
                 </SwiperSlide>
               ))}
@@ -131,7 +147,13 @@ export default function HeroArea() {
               />
             </div>
             <div className="play-icon">
-              <img src="images/hero/text-spiner.png" alt="text" />
+              <NextImage
+                src="/images/hero/text-spiner.png"
+                alt="text"
+                width={180}
+                height={180}
+                style={{ width: "auto", height: "auto" }}
+              />
               <div className="icon">
                 <button
                   type="button"

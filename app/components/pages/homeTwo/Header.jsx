@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { headerMenuData } from "../../../data/headerMenuData";
 import { useStickyHeader } from "../../../hooks/useStickyHeader";
 import { useOffcanvas } from "../../../contexts/OffcanvasContext";
@@ -20,7 +21,14 @@ export default function Header({ onSearchClick }) {
             <div className="ht-menu-left">
               <div className="ht-menu-logo">
                 <Link href="/">
-                  <img src="images/logo/logo.svg" alt="logo" />
+                  <Image
+                    src="/images/logo/logo.svg"
+                    alt="logo"
+                    width={160}
+                    height={40}
+                    style={{ width: "auto", height: "auto" }}
+                    priority
+                  />
                 </Link>
               </div>
             </div>

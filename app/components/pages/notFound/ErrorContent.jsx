@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 export default function ErrorContent() {
   return (
@@ -5,7 +6,15 @@ export default function ErrorContent() {
       <div className="container">
         <div className="error-content">
           <div className="err-img">
-            <img src="/images/error/error.svg" alt="not-found" />
+            <Image
+              src="/images/error/error.svg"
+              alt="not-found"
+              width={520}
+              height={320}
+              style={{ width: "100%", height: "auto" }}
+              sizes="(max-width: 768px) 100vw, 520px"
+              priority
+            />
           </div>
           <p>
             Sorry, the page you’re looking for doesn’t exist. If you think

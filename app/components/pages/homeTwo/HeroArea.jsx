@@ -1,10 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function HeroArea() {
   return (
     <section className="ht-hero-area hero-2">
       <div className="shape-two float-bob-x">
-        <img src="images/shape/11.svg" alt="shape" />
+        <Image
+          src="/images/shape/11.svg"
+          alt="shape"
+          width={180}
+          height={180}
+          style={{ width: "auto", height: "auto" }}
+          priority
+          loading="eager"
+        />
       </div>
       <div className="container">
         <div className="hero-wrapper">
@@ -29,9 +38,24 @@ export default function HeroArea() {
             </div>
             <div className="col-lg-7">
               <div className="hero-img two" data-aos="fade-up" data-aos-delay="200">
-                <img src="images/hero/2.jpg" alt="img" />
+                <Image
+                  src="/images/hero/2.jpg"
+                  alt="img"
+                  width={900}
+                  height={650}
+                  style={{ width: "100%", height: "auto" }}
+                  sizes="(max-width: 991px) 100vw, 60vw"
+                  priority
+                />
                 <div className="sm-img float-bob-y">
-                  <img src="images/hero/4.jpg" alt="img" />
+                  <Image
+                    src="/images/hero/4.jpg"
+                    alt="img"
+                    width={320}
+                    height={320}
+                    style={{ width: "auto", height: "auto" }}
+                    sizes="320px"
+                  />
                 </div>
               </div>
             </div>

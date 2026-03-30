@@ -6,6 +6,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { projectData } from "../../../data/homeData";
 
 export default function ProjectArea() {
@@ -104,7 +105,14 @@ export default function ProjectArea() {
                 <div className="single-item">
                   <div className="thumb">
                     <Link href={project.link}>
-                      <img src={project.image} alt={project.title} />
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={800}
+                        height={600}
+                        style={{ width: "100%", height: "auto" }}
+                        sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 25vw"
+                      />
                     </Link>
 
                     <div className="content">
@@ -115,9 +123,12 @@ export default function ProjectArea() {
                       <div className="bottom">
                         <p>{project.category}</p>
                         <Link href={project.link}>
-                          <img
-                            src="images/icon/arrow-up.svg"
+                          <Image
+                            src="/images/icon/arrow-up.svg"
                             alt="arrow"
+                            width={24}
+                            height={24}
+                            style={{ width: "auto", height: "auto" }}
                           />
                         </Link>
                       </div>

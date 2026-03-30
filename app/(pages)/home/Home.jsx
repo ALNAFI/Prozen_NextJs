@@ -29,7 +29,7 @@ export default function Home() {
         titleColor="text-white"
         subtitleColor=""
         descriptionColor="ht-process-item"
-        shape="images/shape/3.1.svg"
+        shape="/images/shape/3.1.svg"
       />
       <TeamArea />
       <TestimonialsArea />
