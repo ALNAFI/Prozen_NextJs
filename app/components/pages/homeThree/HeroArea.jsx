@@ -18,7 +18,7 @@ export default function HeroArea() {
   const [bgStyle, setBgStyle] = useState({});
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const nextRef = useRef(null);
-  const [swiper, setSwiper] = useState(null);
+  const swiperRef = useRef(null);
 
   useEffect(() => {
     const img = new Image();
@@ -34,12 +34,29 @@ export default function HeroArea() {
   }, []);
 
   useEffect(() => {
-    if (swiper && nextRef.current) {
-      swiper.params.navigation.nextEl = nextRef.current;
-      swiper.navigation.init();
-      swiper.navigation.update();
-    }
-  }, [swiper]);
+    let raf = 0;
+
+    const initNavigation = () => {
+      const swiper = swiperRef.current;
+      const nextEl = nextRef.current;
+
+      if (!swiper || !nextEl) {
+        raf = window.requestAnimationFrame(initNavigation);
+        return;
+      }
+
+      swiper.params.navigation = {
+        ...(swiper.params.navigation || {}),
+        nextEl,
+      };
+      swiper.navigation?.destroy?.();
+      swiper.navigation?.init?.();
+      swiper.navigation?.update?.();
+    };
+
+    raf = window.requestAnimationFrame(initNavigation);
+    return () => window.cancelAnimationFrame(raf);
+  }, []);
 
 
   useEffect(() => {
@@ -88,8 +105,10 @@ export default function HeroArea() {
               spaceBetween={30}
               speed={1000}
               loop={true}
-              navigation={{ nextEl: nextRef.current }}
-              onSwiper={setSwiper}
+              navigation={false}
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
              
             >
               {HERO_SLIDES.map((slide) => (
@@ -105,8 +124,8 @@ export default function HeroArea() {
               <i
                 ref={nextRef}
                 className="fa-solid fa-arrow-right-long ht-hero-next"
-                onClick={() => swiper?.slideNext()}
-                onKeyDown={(e) => e.key === "Enter" && swiper?.slideNext()}
+                onClick={() => swiperRef.current?.slideNext()}
+                onKeyDown={(e) => e.key === "Enter" && swiperRef.current?.slideNext()}
                 role="button"
                 tabIndex={0}
               />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -11,16 +11,34 @@ export default function TestimonialsArea() {
   const { section, items } = testimonialsAreaData;
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-  const [swiper, setSwiper] = useState(null);
+  const swiperRef = useRef(null);
 
   useEffect(() => {
-    if (swiper && prevRef.current && nextRef.current) {
-      swiper.params.navigation.prevEl = prevRef.current;
-      swiper.params.navigation.nextEl = nextRef.current;
-      swiper.navigation.init();
-      swiper.navigation.update();
-    }
-  }, [swiper]);
+    let raf = 0;
+
+    const initNavigation = () => {
+      const swiper = swiperRef.current;
+      const prevEl = prevRef.current;
+      const nextEl = nextRef.current;
+
+      if (!swiper || !prevEl || !nextEl) {
+        raf = window.requestAnimationFrame(initNavigation);
+        return;
+      }
+
+      swiper.params.navigation = {
+        ...(swiper.params.navigation || {}),
+        prevEl,
+        nextEl,
+      };
+      swiper.navigation?.destroy?.();
+      swiper.navigation?.init?.();
+      swiper.navigation?.update?.();
+    };
+
+    raf = window.requestAnimationFrame(initNavigation);
+    return () => window.cancelAnimationFrame(raf);
+  }, []);
   return (
     <section className="ht-testimonials-area section-padding pt-0">
       <div className="container">
@@ -72,11 +90,10 @@ export default function TestimonialsArea() {
                     delay: 3500,
                     disableOnInteraction: false,
                   }}
-                  navigation={{
-                    prevEl: prevRef.current,
-                    nextEl: nextRef.current,
+                  navigation={false}
+                  onSwiper={(swiper) => {
+                    swiperRef.current = swiper;
                   }}
-                  onSwiper={setSwiper}
                   breakpoints={{
                     575: {
                       slidesPerView: 1,

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -11,6 +11,34 @@ export default function Testimonials() {
   const { subtitle, title, items } = testimonialsData;
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    let raf = 0;
+
+    const initNavigation = () => {
+      const swiper = swiperRef.current;
+      const prevEl = prevRef.current;
+      const nextEl = nextRef.current;
+
+      if (!swiper || !prevEl || !nextEl) {
+        raf = window.requestAnimationFrame(initNavigation);
+        return;
+      }
+
+      swiper.params.navigation = {
+        ...(swiper.params.navigation || {}),
+        prevEl,
+        nextEl,
+      };
+      swiper.navigation?.destroy?.();
+      swiper.navigation?.init?.();
+      swiper.navigation?.update?.();
+    };
+
+    raf = window.requestAnimationFrame(initNavigation);
+    return () => window.cancelAnimationFrame(raf);
+  }, []);
 
   return (
     <section className="ht-testimonials-area-2 section-padding">
@@ -48,13 +76,9 @@ export default function Testimonials() {
               delay: 3500,
               disableOnInteraction: false,
             }}
-            navigation={{
-              prevEl: prevRef.current,
-              nextEl: nextRef.current,
-            }}
-            onBeforeInit={(swiper) => {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
+            navigation={false}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
             }}
             breakpoints={{
               1200: { slidesPerView: 3 },
