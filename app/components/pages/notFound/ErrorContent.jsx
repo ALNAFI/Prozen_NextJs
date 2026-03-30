@@ -11,8 +11,6 @@ export default function ErrorContent() {
               alt="not-found"
               width={520}
               height={320}
-              style={{ width: "100%", height: "auto" }}
-              sizes="(max-width: 768px) 100vw, 520px"
               priority
             />
           </div>
