@@ -14,7 +14,7 @@ import ServicesArea from "../components/pages/home/ServicesArea";
 import ProjectArea from "../components/pages/home/ProjectArea";
 import { recentPostsData } from "../data/homeData";
 
-export default function HomePageClient() {
+export default function Home() {
   return (
     <>
       <Preloader />

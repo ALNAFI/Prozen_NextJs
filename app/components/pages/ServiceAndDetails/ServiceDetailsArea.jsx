@@ -17,7 +17,7 @@ export default function ServiceDetailsArea() {
                                     <img src="images/icon/16.svg" alt="icon"/>
                                 </div>
                                 <div className="content">
-                                    <h3>Don't hesitate to contact us</h3>
+                                    <h3>Don&apos;t hesitate to contact us</h3>
                                     <p>At our IT solution company, we are committed to exceptional</p>
                                     <Link href="/contact" className="ct-btn">Get in Touch</Link>
                                 </div>

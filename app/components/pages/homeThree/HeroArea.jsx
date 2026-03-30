@@ -71,14 +71,14 @@ export default function HeroArea() {
             <p className="desc" data-aos="fade-up" data-aos-delay="600">
               Explore our tailored insurance solutions and experience the peace
               of mind that <br />
-              comes with knowing you're with covered Potenti nullam{" "}
+              comes with knowing you&apos;re with covered Potenti nullam{" "}
             </p>
             <Link href="/contact"
               className="ht-btn style-2"
               data-aos="fade-up"
               data-aos-delay="900"
             >
-              Let's Get in Touch
+              Let&apos;s Get in Touch
             </Link>
           </div>
           <div className="video-card" data-aos="fade-up" data-aos-delay="300">

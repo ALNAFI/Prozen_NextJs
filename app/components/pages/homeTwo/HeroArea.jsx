@@ -23,7 +23,7 @@ export default function HeroArea() {
                   data-aos="fade-up"
                   data-aos-delay="600"
                 >
-                  Let's Get in Touch
+                  Let&apos;s Get in Touch
                 </Link>
               </div>
             </div>

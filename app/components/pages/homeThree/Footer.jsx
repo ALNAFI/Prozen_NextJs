@@ -61,7 +61,7 @@ export default function Footer() {
             <div className="col-xl-7 col-lg-6">
               <div className="content">
                 <h2>
-                  Let's talk about <br /> your business <br /> goals
+                  Let&apos;s talk about <br /> your business <br /> goals
                 </h2>
                 <Link href="/contact" className="ht-btn style-2">
                   Get Updates

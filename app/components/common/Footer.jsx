@@ -14,7 +14,7 @@ export default function Footer() {
             <p className="desc">
               At the core of our ethos lies a dedication to our clients.
               <br />
-              Your success is our shared triumph, and we're.
+              Your success is our shared triumph, and we&apos;re.
             </p>
           </div>
 
