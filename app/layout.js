@@ -22,7 +22,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className="body-color">
-        <Providers>{children}</Providers>
+        <Providers>
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   );
