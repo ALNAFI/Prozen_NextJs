@@ -42,8 +42,6 @@ export default function ServicesArea() {
                   alt="img"
                   width={520}
                   height={620}
-                  style={{ width: "100%", height: "auto" }}
-                  sizes="(max-width: 991px) 100vw, 33vw"
                   priority
                 />
                 <div className="content">
@@ -79,7 +77,6 @@ export default function ServicesArea() {
                       alt="sm-img"
                       width={180}
                       height={180}
-                      style={{ width: "auto", height: "auto" }}
                       loading="lazy"
                     />
                   </div>
@@ -115,7 +112,6 @@ export default function ServicesArea() {
                   alt="icon"
                   width={22}
                   height={22}
-                  style={{ width: "auto", height: "auto" }}
                   loading="lazy"
                 />
               </div>

@@ -109,7 +109,6 @@ export default function Testimonials() {
                           alt={item.name}
                           width={80}
                           height={80}
-                          style={{ width: "auto", height: "auto" }}
                         />
                       </div>
                       <div className="author-info">

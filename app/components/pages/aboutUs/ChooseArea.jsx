@@ -44,8 +44,6 @@ export default function ChooseArea() {
                     alt="choose"
                     width={860}
                     height={640}
-                    style={{ width: "100%", height: "auto" }}
-                    sizes="(max-width: 991px) 100vw, 60vw"
                     loading="lazy"
                   />
                 </div>
@@ -68,7 +66,6 @@ export default function ChooseArea() {
                         alt={item.title}
                         width={56}
                         height={56}
-                        style={{ width: "auto", height: "auto" }}
                         loading="lazy"
                       />
                     </div>

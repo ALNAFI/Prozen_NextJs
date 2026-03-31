@@ -23,8 +23,6 @@ export default function BlogArea() {
                         alt={blog.title}
                         width={860}
                         height={540}
-                        style={{ width: "100%", height: "auto" }}
-                        sizes="(max-width: 991px) 100vw, 33vw"
                         loading="lazy"
                       />
                     </Link>

@@ -22,8 +22,6 @@ export default function AboutArea({ image }) {
                   alt="about"
                   width={860}
                   height={640}
-                  style={{ width: "100%", height: "auto" }}
-                  sizes="(max-width: 991px) 100vw, 50vw"
                   priority
                 />
               </div>

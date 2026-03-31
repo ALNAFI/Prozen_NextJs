@@ -45,9 +45,7 @@ export default function ProjectArea() {
                         src={item.image}
                         alt={item.title}
                         width={900}
-                        height={650}
-                        style={{ width: "100%", height: "auto" }}
-                        sizes="(max-width: 991px) 100vw, 50vw"
+                        height={650}  
                         loading="lazy"
                       />
                     </Link>

@@ -35,7 +35,6 @@ export default function ServicesArea() {
                       alt="icon"
                       width={64}
                       height={64}
-                      style={{ width: "auto", height: "auto" }}
                       loading="lazy"
                     />
                   </div>

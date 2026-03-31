@@ -30,7 +30,6 @@ export default function Offcanvas() {
                 alt="logo"
                 width={160}
                 height={40}
-                style={{ width: "auto", height: "auto" }}
                 priority
               />
             </Link>

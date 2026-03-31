@@ -58,8 +58,6 @@ export default function RecentPosts({
                         alt={post.title}
                         width={860}
                         height={540}
-                        style={{ width: "100%", height: "auto" }}
-                        sizes="(max-width: 991px) 100vw, 33vw"
                       />
                     </Link>
                   </div>

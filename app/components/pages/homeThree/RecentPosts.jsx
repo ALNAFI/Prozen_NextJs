@@ -50,8 +50,6 @@ export default function RecentPosts() {
                           alt={post.titleLine1}
                           width={420}
                           height={280}
-                          style={{ width: "100%", height: "auto" }}
-                          sizes="(max-width: 991px) 100vw, 50vw"
                           loading="lazy"
                         />
                       </Link>

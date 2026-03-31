@@ -110,8 +110,6 @@ export default function ProjectArea() {
                         alt={project.title}
                         width={800}
                         height={600}
-                        style={{ width: "100%", height: "auto" }}
-                        sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 25vw"
                       />
                     </Link>
 
@@ -128,7 +126,6 @@ export default function ProjectArea() {
                             alt="arrow"
                             width={24}
                             height={24}
-                            style={{ width: "auto", height: "auto" }}
                           />
                         </Link>
                       </div>

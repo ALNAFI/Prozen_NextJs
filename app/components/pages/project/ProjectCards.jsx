@@ -22,8 +22,6 @@ export default function ProjectCards() {
                         alt={project.title}
                         width={900}
                         height={650}
-                        style={{ width: "100%", height: "auto" }}
-                        sizes="(max-width: 991px) 100vw, 33vw"
                         loading="lazy"
                       />
                     </Link>
@@ -42,7 +40,6 @@ export default function ProjectCards() {
                             alt="icon"
                             width={24}
                             height={24}
-                            style={{ width: "auto", height: "auto" }}
                             loading="lazy"
                           />
                         </Link>

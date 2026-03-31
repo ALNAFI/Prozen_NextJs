@@ -19,7 +19,6 @@ export default function ContactInfo() {
                     alt="icon"
                     width={42}
                     height={42}
-                    style={{ width: "auto", height: "auto" }}
                     loading="lazy"
                   />
                 </div>
@@ -41,7 +40,6 @@ export default function ContactInfo() {
                     alt="icon"
                     width={42}
                     height={42}
-                    style={{ width: "auto", height: "auto" }}
                     loading="lazy"
                   />
                 </div>
@@ -65,7 +63,6 @@ export default function ContactInfo() {
                     alt="icon"
                     width={42}
                     height={42}
-                    style={{ width: "auto", height: "auto" }}
                     loading="lazy"
                   />
                 </div>

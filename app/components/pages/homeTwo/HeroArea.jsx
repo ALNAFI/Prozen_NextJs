@@ -10,7 +10,6 @@ export default function HeroArea() {
           alt="shape"
           width={180}
           height={180}
-          style={{ width: "auto", height: "auto" }}
           priority
           loading="eager"
         />
@@ -43,8 +42,6 @@ export default function HeroArea() {
                   alt="img"
                   width={900}
                   height={650}
-                  style={{ width: "100%", height: "auto" }}
-                  sizes="(max-width: 991px) 100vw, 60vw"
                   priority
                 />
                 <div className="sm-img float-bob-y">
@@ -53,8 +50,6 @@ export default function HeroArea() {
                     alt="img"
                     width={320}
                     height={320}
-                    style={{ width: "auto", height: "auto" }}
-                    sizes="320px"
                   />
                 </div>
               </div>

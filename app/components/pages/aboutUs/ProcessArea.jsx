@@ -19,7 +19,6 @@ export default function ProcessArea({
           alt="shape"
           width={260}
           height={260}
-          style={{ width: "auto", height: "auto" }}
           loading="lazy"
         />
       </div>

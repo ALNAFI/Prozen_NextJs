@@ -29,7 +29,6 @@ export default function Footer() {
                     alt="logo"
                     width={160}
                     height={40}
-                    style={{ width: "auto", height: "auto" }}
                   />
                 </Link>
 

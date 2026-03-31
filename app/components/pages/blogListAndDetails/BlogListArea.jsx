@@ -26,8 +26,6 @@ export default function BlogListArea() {
                             alt={post.title}
                             width={900}
                             height={520}
-                            style={{ width: "100%", height: "auto" }}
-                            sizes="(max-width: 991px) 100vw, 66vw"
                             loading="lazy"
                           />
                         </Link>
@@ -42,7 +40,6 @@ export default function BlogListArea() {
                                 alt="icon"
                                 width={18}
                                 height={18}
-                                style={{ width: "auto", height: "auto" }}
                               />
                               <span>{item.text}</span>
                             </div>

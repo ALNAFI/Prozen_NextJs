@@ -26,7 +26,6 @@ export default function Header({ onSearchClick }) {
                     alt="logo"
                     width={160}
                     height={40}
-                    style={{ width: "auto", height: "auto" }}
                     priority
                   />
                 </Link>

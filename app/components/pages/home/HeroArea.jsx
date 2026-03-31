@@ -68,7 +68,6 @@ const HeroImage = memo(function HeroImage() {
         alt={heroImage.alt}
         width={900}
         height={700}
-        style={{ width: "100%", height: "auto" }}
         priority
       />
     </div>
@@ -87,7 +86,6 @@ const HeroShape = memo(function HeroShape() {
           alt={shape.alt}
           width={160}
           height={160}
-          style={{ width: "auto", height: "auto" }}
           loading="lazy"
         />
       </div>

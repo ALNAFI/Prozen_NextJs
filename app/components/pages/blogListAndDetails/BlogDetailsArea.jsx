@@ -29,8 +29,6 @@ export default function BlogDetailsArea() {
                     alt={hero.title}
                     width={900}
                     height={520}
-                    style={{ width: "100%", height: "auto" }}
-                    sizes="(max-width: 991px) 100vw, 66vw"
                     priority
                   />
                 </div>
@@ -44,7 +42,6 @@ export default function BlogDetailsArea() {
                           alt="icon"
                           width={18}
                           height={18}
-                          style={{ width: "auto", height: "auto" }}
                         />
                         <span>{m.text}</span>
                       </div>
@@ -69,7 +66,6 @@ export default function BlogDetailsArea() {
                     alt="icon"
                     width={42}
                     height={42}
-                    style={{ width: "auto", height: "auto" }}
                   />
                 </div>
                 <p>{quote}</p>
@@ -85,8 +81,6 @@ export default function BlogDetailsArea() {
                         alt="blog"
                         width={860}
                         height={540}
-                        style={{ width: "100%", height: "auto" }}
-                        sizes="(max-width: 767px) 100vw, 50vw"
                       />
                     </div>
                   </div>
@@ -128,7 +122,6 @@ export default function BlogDetailsArea() {
                     alt={author.name}
                     width={120}
                     height={120}
-                    style={{ width: "auto", height: "auto" }}
                   />
                 </div>
                 <div className="content">
@@ -150,7 +143,6 @@ export default function BlogDetailsArea() {
                           alt={c.name}
                           width={90}
                           height={90}
-                          style={{ width: "auto", height: "auto" }}
                         />
                       </div>
                       <div className="content">
@@ -163,7 +155,6 @@ export default function BlogDetailsArea() {
                             alt="icon"
                             width={18}
                             height={18}
-                            style={{ width: "auto", height: "auto" }}
                           />{" "}
                           Reply
                         </Link>

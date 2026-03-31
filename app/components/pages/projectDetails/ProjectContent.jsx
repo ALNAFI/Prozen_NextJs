@@ -23,8 +23,6 @@ export default function ProjectContent() {
               alt={title}
               width={1200}
               height={700}
-              style={{ width: "100%", height: "auto" }}
-              sizes="(max-width: 991px) 100vw, 1200px"
               priority
             />
           </div>
@@ -51,8 +49,6 @@ export default function ProjectContent() {
                           alt="project"
                           width={860}
                           height={540}
-                          style={{ width: "100%", height: "auto" }}
-                          sizes="(max-width: 767px) 100vw, 50vw"
                           loading="lazy"
                         />
                       </div>
@@ -87,7 +83,6 @@ export default function ProjectContent() {
                           alt={item.label}
                           width={42}
                           height={42}
-                          style={{ width: "auto", height: "auto" }}
                           loading="lazy"
                         />
                       </div>

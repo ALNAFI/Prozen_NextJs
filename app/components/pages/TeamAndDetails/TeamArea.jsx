@@ -23,8 +23,6 @@ export default function TeamArea() {
                         alt={member.name}
                         width={420}
                         height={520}
-                        style={{ width: "100%", height: "auto" }}
-                        sizes="(max-width: 991px) 100vw, 25vw"
                         loading="lazy"
                       />
                     </Link>

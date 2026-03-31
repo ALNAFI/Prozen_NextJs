@@ -37,7 +37,6 @@ export default function StatsArea() {
             alt="shape"
             width={260}
             height={260}
-            style={{ width: "auto", height: "auto" }}
             priority
           />
         </div>
@@ -47,7 +46,6 @@ export default function StatsArea() {
             alt="shape"
             width={260}
             height={260}
-            style={{ width: "auto", height: "auto" }}
             priority
           />
         </div>

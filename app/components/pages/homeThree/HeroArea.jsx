@@ -82,7 +82,6 @@ export default function HeroArea() {
             alt="shape"
             width={180}
             height={180}
-            style={{ width: "auto", height: "auto" }}
             priority
           />
         </div>
@@ -127,8 +126,6 @@ export default function HeroArea() {
                       alt={slide.alt}
                       width={820}
                       height={520}
-                      style={{ width: "100%", height: "auto" }}
-                      sizes="(max-width: 991px) 100vw, 50vw"
                       priority={slide.id === 1}
                     />
                   </div>
@@ -152,7 +149,6 @@ export default function HeroArea() {
                 alt="text"
                 width={180}
                 height={180}
-                style={{ width: "auto", height: "auto" }}
               />
               <div className="icon">
                 <button

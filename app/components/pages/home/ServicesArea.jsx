@@ -33,7 +33,6 @@ export default function ServicesArea() {
                       alt="icon"
                       width={64}
                       height={64}
-                      style={{ width: "auto", height: "auto" }}
                       loading="lazy"
                     />
                   </div>
@@ -47,7 +46,6 @@ export default function ServicesArea() {
                         alt="arrow"
                         width={24}
                         height={24}
-                        style={{ width: "auto", height: "auto" }}
                         loading="lazy"
                       />
                     </h3>

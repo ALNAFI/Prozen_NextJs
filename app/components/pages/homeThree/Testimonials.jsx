@@ -50,7 +50,6 @@ export default function Testimonials() {
           alt="shape"
           width={520}
           height={520}
-          style={{ width: "auto", height: "auto" }}
           loading="lazy"
         />
       </div>
@@ -84,7 +83,6 @@ export default function Testimonials() {
                             alt="icon"
                             width={48}
                             height={48}
-                            style={{ width: "auto", height: "auto" }}
                           />
                         </div>
 

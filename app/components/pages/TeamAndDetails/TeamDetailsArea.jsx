@@ -19,8 +19,6 @@ export default function TeamDetailsArea() {
                     alt={profile.name}
                     width={720}
                     height={820}
-                    style={{ width: "100%", height: "auto" }}
-                    sizes="(max-width: 991px) 100vw, 40vw"
                     priority
                   />
                 </div>

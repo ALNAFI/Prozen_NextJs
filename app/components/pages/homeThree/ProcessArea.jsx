@@ -34,8 +34,6 @@ export default function ProcessArea() {
                       alt="process-img"
                       width={520}
                       height={520}
-                      style={{ width: "100%", height: "auto" }}
-                      sizes="(max-width: 767px) 100vw, 25vw"
                     />
 
                     <div className="circle">
@@ -44,7 +42,6 @@ export default function ProcessArea() {
                         alt="circle"
                         width={120}
                         height={120}
-                        style={{ width: "auto", height: "auto" }}
                       />
                     </div>
 
@@ -59,7 +56,6 @@ export default function ProcessArea() {
                           alt="arrow-icon"
                           width={40}
                           height={40}
-                          style={{ width: "auto", height: "auto" }}
                         />
                       </div>
                     )}

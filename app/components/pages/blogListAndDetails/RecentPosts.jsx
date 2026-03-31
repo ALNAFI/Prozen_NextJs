@@ -15,7 +15,6 @@ export default function RecentPosts() {
                 alt={post.title}
                 width={90}
                 height={90}
-                style={{ width: "auto", height: "auto" }}
                 loading="lazy"
               />
             </div>
