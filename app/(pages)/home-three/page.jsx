@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-import Search from "../../components/ui/Search";
 import Header from "../../components/pages/homeThree/Hearder";
 import Footer from "../../components/pages/homeThree/Footer";
 import FaqAreas from "../../components/pages/faq/FaqAreas";
@@ -15,13 +11,10 @@ import ProcessArea from "../../components/pages/homeThree/ProcessArea";
 import Preloader from "../../components/ui/Preloader";
 
 export default function HomeThree() {
-  const [searchOpen, setSearchOpen] = useState(false);
-
   return (
     <>
       <Preloader />
-      <Header onSearchClick={() => setSearchOpen(true)} />
-      <Search isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
+      <Header />
       <HeroArea />
       <ServicesArea />
       <AboutArea image="/images/about/3.jpg" />
