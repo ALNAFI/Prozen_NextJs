@@ -65,14 +65,14 @@ export default function TestimonialsArea() {
                 <button 
                   ref={prevRef} 
                   className="ht-testi-prev"
-                  onClick={() => swiper?.slidePrev()}
+                  onClick={() => swiperRef.current?.slidePrev()}
                 >
                   <i className="fa-solid fa-chevron-left" />
                 </button>
                 <button 
                   ref={nextRef} 
                   className="ht-testi-next"
-                  onClick={() => swiper?.slideNext()}
+                  onClick={() => swiperRef.current?.slideNext()}
                 >
                   <i className="fa-solid fa-chevron-right" />
                 </button>
