@@ -12,15 +12,22 @@ export default function Footer() {
   const [bgStyle, setBgStyle] = useState({});
 
   useEffect(() => {
+    let cancelled = false;
     const img = new window.Image();
     img.src = FOOTER_BG;
     img.onload = () => {
+      if (cancelled) return;
       setBgStyle({
         backgroundImage: `url(${FOOTER_BG})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       });
+    };
+
+    return () => {
+      cancelled = true;
+      img.onload = null;
     };
   }, []);
 

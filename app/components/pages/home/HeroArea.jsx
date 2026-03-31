@@ -116,15 +116,22 @@ const HeroArea = () => {
   const [backgroundStyle, setBackgroundStyle] = useState({});
 
   useEffect(() => {
+    let cancelled = false;
     const img = new window.Image();
     img.src = HERO_DATA.backgroundImage;
     img.onload = () => {
+      if (cancelled) return;
       setBackgroundStyle({
         backgroundImage: `url(${HERO_DATA.backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       });
+    };
+
+    return () => {
+      cancelled = true;
+      img.onload = null;
     };
   }, []);
 

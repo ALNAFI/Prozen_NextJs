@@ -22,15 +22,22 @@ export default function HeroArea() {
   const swiperRef = useRef(null);
 
   useEffect(() => {
+    let cancelled = false;
     const img = new window.Image();
     img.src = HERO_BG;
     img.onload = () => {
+      if (cancelled) return;
       setBgStyle({
         backgroundImage: `url(${HERO_BG})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       });
+    };
+
+    return () => {
+      cancelled = true;
+      img.onload = null;
     };
   }, []);
 
