@@ -4,11 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import TopHeader from "./TopHeader";
 import { headerMenuData } from "../../data/headerMenuData";
-import { useOffcanvas } from "../../contexts/OffcanvasContext";
+
 import { useStickyHeader } from "../../hooks/useStickyHeader";
+import MobileMenu from "../buttons/MobileMenu";
 
 export default function Header() {
-  const { openOffcanvas } = useOffcanvas();
+  
   const isSticky = useStickyHeader();
 
   return (
@@ -83,17 +84,11 @@ export default function Header() {
                 lets get in touch
               </Link>
 
-              <button
-                type="button"
-                className="ht-menu-btn d-lg-none offcanvas-toggle"
-                onClick={openOffcanvas}
-                aria-label="Open menu"
-              >
-                <i className="fa-solid fa-bars-staggered" />
-              </button>
+              <MobileMenu />
             </div>
           </div>
         </div>
+        
       </div>
     </header>
   );

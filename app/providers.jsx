@@ -1,5 +1,3 @@
-"use client";
-
 import { LenisProvider } from "./contexts/LenisContext";
 import { OffcanvasProvider } from "./contexts/OffcanvasContext";
 import Offcanvas from "./components/common/Offcanvas";

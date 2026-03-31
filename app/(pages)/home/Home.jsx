@@ -1,5 +1,3 @@
-"use client";
-
 import Footer from "../../components/common/Footer";
 import Header from "../../components/common/Header";
 import RecentPosts from "../../components/pages/home/RecentPosts";
