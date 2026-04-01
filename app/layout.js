@@ -4,8 +4,10 @@ import "./style/style.css";
 import "./style/lenis.css";
 import Providers from "./providers";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+
 export const metadata = {
-  metadataBase: new URL("https://prozen-nextjs.vercel.app/"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Prozen",
     template: "%s | Prozen",
@@ -16,7 +18,7 @@ export const metadata = {
     title: "Prozen",
     description:
       "Prozen — business, consulting, and insurance website template with multiple home layouts.",
-    url: "https://example.com",
+    url: siteUrl,
     siteName: "Prozen",
     locale: "en_US",
     type: "website",

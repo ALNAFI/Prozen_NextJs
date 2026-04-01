@@ -102,7 +102,6 @@ public/
   images/                  # All images, icons, shapes, logos used by the template
   favicon.svg
 
-next.config.mjs
 package.json
 ```
 
@@ -155,6 +154,18 @@ Metadata is defined using Next.js App Router metadata:
 
 Update:
 - `export const metadata = { ... }` blocks
+
+#### How to set the production site URL (SEO)
+This template reads the site URL from an environment variable for SEO metadata:
+- `NEXT_PUBLIC_SITE_URL`
+
+Example:
+
+```bash
+NEXT_PUBLIC_SITE_URL="https://your-domain.com"
+```
+
+This value is used by `app/layout.js` for `metadataBase` and Open Graph URLs.
 
 ---
 
