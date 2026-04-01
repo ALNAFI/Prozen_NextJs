@@ -135,13 +135,12 @@ export default function Offcanvas() {
       </div>
 
       {/* Overlay */}
-      <div
+      <button
+        type="button"
         className={`ht-offcanvas-overlay${isOpen ? " ht-offcanvas-overlay-open" : ""}`}
         onClick={closeOffcanvas}
-        onKeyDown={(e) => e.key === "Enter" && closeOffcanvas()}
-        role="button"
-        tabIndex={0}
         aria-label="Close menu"
+        style={{ border: 0, background: "transparent" }}
       />
     </>
   );

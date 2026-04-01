@@ -3,7 +3,7 @@
 import { useInputForm } from "../../../hooks/useInputForm";
 
 export default function Form() {
-  const { register, handleSubmit, errors, isSubmitting, formStatus } =
+  const { register, handleSubmit, onSubmit, errors, isSubmitting, formStatus } =
     useInputForm();
 
   return (
@@ -14,7 +14,7 @@ export default function Form() {
       </p>
 
       <div className="ht-contact-wrapper">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="row">
             <div className="col-md-6">
               <input

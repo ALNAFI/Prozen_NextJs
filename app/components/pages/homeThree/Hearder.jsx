@@ -66,15 +66,21 @@ export default function Header({ onSearchClick }) {
                   </nav>
                 </div>
 
-                <div
+                <button
+                  type="button"
                   className="search d-none d-lg-block search-toggle"
                   onClick={handleSearchClick}
                   onKeyDown={(e) => e.key === "Enter" && handleSearchClick()}
-                  role="button"
-                  tabIndex={0}
+                  aria-label="Open search"
+                  style={{
+                    background: "none",
+                    border: 0,
+                    padding: 0,
+                    lineHeight: "inherit",
+                  }}
                 >
                   <i className="fa-solid fa-magnifying-glass"></i>
-                </div>
+                </button>
 
                 <Link href="/contact" className="ht-btn d-none d-lg-block">
                   get in touch

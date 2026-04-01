@@ -101,26 +101,34 @@ export default function Testimonials() {
 
           {/* Slider buttons */}
           <div className="swiper-testi-btn">
-            <div
+            <button
+              type="button"
               ref={prevRef}
               className="testi-slides-prev"
               onClick={() => swiperRef.current?.slidePrev()}
-              onKeyDown={(e) => e.key === "Enter" && swiperRef.current?.slidePrev()}
-              role="button"
-              tabIndex={0}
+              aria-label="Previous testimonial"
+              style={{
+                background: "none",
+                border: 0,
+                padding: 0,
+              }}
             >
               <i className="fa-solid fa-arrow-left-long"></i>
-            </div>
-            <div
+            </button>
+            <button
+              type="button"
               ref={nextRef}
               className="testi-slides-next"
               onClick={() => swiperRef.current?.slideNext()}
-              onKeyDown={(e) => e.key === "Enter" && swiperRef.current?.slideNext()}
-              role="button"
-              tabIndex={0}
+              aria-label="Next testimonial"
+              style={{
+                background: "none",
+                border: 0,
+                padding: 0,
+              }}
             >
               <i className="fa-solid fa-arrow-right-long"></i>
-            </div>
+            </button>
           </div>
         </div>
       </div>

@@ -55,7 +55,8 @@ export const useInputForm = ({ onSubmit: customSubmit, delay = 2000 } = {}) => {
   }, [formStatus.type]);
   return {
     register,
-    handleSubmit: handleSubmit(onSubmit),
+    onSubmit,
+    handleSubmit,
     errors,
     isSubmitting,
     formStatus,

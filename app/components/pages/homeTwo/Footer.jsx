@@ -12,7 +12,7 @@ import { footerSocialLinks } from "../../../data/footerData";
 import { getCurrentYear } from "../../../utils/getCurrentYear";
 
 export default function Footer() {
-  const { register, handleSubmit, errors, isSubmitting, formStatus } =
+  const { register, handleSubmit, onSubmit, errors, isSubmitting, formStatus } =
     useInputForm();
 
   return (
@@ -83,7 +83,7 @@ export default function Footer() {
                   data-aos="fade-up"
                   data-aos-delay="1200"
                 >
-                  <form onSubmit={handleSubmit}>
+                  <form onSubmit={handleSubmit(onSubmit)}>
                     <h5>Subscribe for updates and exclusive offers!</h5>
                     <input
                       type="email"

@@ -32,16 +32,16 @@ export default function ProcessArea() {
                     <Image
                       src={item.image}
                       alt="process-img"
-                      width={520}
-                      height={520}
+                      width={220}
+                      height={220}
                     />
 
                     <div className="circle">
                       <Image
                         src={circleImage}
                         alt="circle"
-                        width={120}
-                        height={120}
+                        width={250}
+                        height={240}
                       />
                     </div>
 
@@ -54,8 +54,8 @@ export default function ProcessArea() {
                         <Image
                           src={item.arrow}
                           alt="arrow-icon"
-                          width={40}
-                          height={40}
+                          width={140}
+                          height={140}
                         />
                       </div>
                     )}

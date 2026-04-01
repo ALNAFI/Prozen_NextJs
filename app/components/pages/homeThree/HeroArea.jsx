@@ -141,13 +141,18 @@ export default function HeroArea() {
             </Swiper>
             <div className="txt">
               <span>Featured Services</span>
-              <i
+              <button
+                type="button"
                 ref={nextRef}
                 className="fa-solid fa-arrow-right-long ht-hero-next"
                 onClick={() => swiperRef.current?.slideNext()}
-                onKeyDown={(e) => e.key === "Enter" && swiperRef.current?.slideNext()}
-                role="button"
-                tabIndex={0}
+                aria-label="Next slide"
+                style={{
+                  background: "none",
+                  border: 0,
+                  padding: 0,
+                  lineHeight: "inherit",
+                }}
               />
             </div>
             <div className="play-icon">
