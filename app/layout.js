@@ -2,6 +2,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./style/style.css";
 import "./style/lenis.css";
+import {
+  fontOswald,
+  fontPlusJakartaSans,
+  fontSpaceGrotesk,
+} from "./fonts";
 import { LenisProvider } from "./contexts/LenisContext";
 import { OffcanvasProvider } from "./contexts/OffcanvasContext";
 import AOSInit from "./components/ui/AOSInit";
@@ -66,9 +71,11 @@ export default function RootLayout({ children }) {
     </>
   );
 
+  const fontVars = `${fontPlusJakartaSans.variable} ${fontOswald.variable} ${fontSpaceGrotesk.variable}`;
+
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body className="body-color">
+      <body className={`${fontVars} body-color`}>
         {o.lenis ? (
           <LenisProvider>
             <OffcanvasProvider>{appTree}</OffcanvasProvider>
