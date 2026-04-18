@@ -2,27 +2,46 @@
 
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function AOSInit() {
   const pathname = usePathname();
-  const didInitRef = useRef(false);
+  const aosRef = useRef(null);
 
   useEffect(() => {
-    if (didInitRef.current) return;
-    didInitRef.current = true;
+    let cancelled = false;
 
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
+    void (async () => {
+      await new Promise((resolve) => {
+        requestAnimationFrame(() => resolve());
+      });
+      if (cancelled) return;
+
+      const { default: AOS } = await import("aos");
+      if (cancelled) return;
+
+      aosRef.current = AOS;
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+      AOS.refresh();
+    })();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   useEffect(() => {
-    AOS.refresh();
+    const AOS = aosRef.current;
+    if (!AOS) return;
+
+    const id = requestAnimationFrame(() => {
+      AOS.refresh();
+    });
+    return () => cancelAnimationFrame(id);
   }, [pathname]);
 
   return null;
 }
-
