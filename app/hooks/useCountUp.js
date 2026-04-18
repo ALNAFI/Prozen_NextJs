@@ -8,24 +8,21 @@ export const useCountUp = (endValue, duration = 4000, startDelay = 0) => {
   const animationFrameRef = useRef(null);
 
   useEffect(() => {
+    const element = countRef.current;
+    if (!element) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        setIsVisible(true);
       },
       { threshold: 0.1 },
     );
 
-    const element = countRef.current;
-    if (element) {
-      observer.observe(element);
-    }
+    observer.observe(element);
 
     return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
       observer.disconnect();
     };
   }, []);
