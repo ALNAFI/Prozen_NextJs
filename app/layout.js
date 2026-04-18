@@ -2,7 +2,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./style/style.css";
 import "./style/lenis.css";
-import Providers from "./providers";
+import { LenisProvider } from "./contexts/LenisContext";
+import { OffcanvasProvider } from "./contexts/OffcanvasContext";
+import AOSInit from "./components/ui/AOSInit";
+import GlobalClientChrome from "./components/shell/GlobalClientChrome";
+import { themeOptions } from "./data/themeOptions";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
 
@@ -46,12 +50,32 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const o = themeOptions;
+  const chrome = {
+    offcanvas: o.offcanvas,
+    scrollToTop: o.scrollToTop,
+    backToTop: o.backToTop,
+    cursor: o.cursor,
+  };
+
+  const appTree = (
+    <>
+      {o.aos && <AOSInit />}
+      <main>{children}</main>
+      <GlobalClientChrome chrome={chrome} />
+    </>
+  );
+
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className="body-color">
-        <Providers>
-          <main>{children}</main>
-        </Providers>
+        {o.lenis ? (
+          <LenisProvider>
+            <OffcanvasProvider>{appTree}</OffcanvasProvider>
+          </LenisProvider>
+        ) : (
+          <OffcanvasProvider>{appTree}</OffcanvasProvider>
+        )}
       </body>
     </html>
   );
