@@ -68,7 +68,7 @@ export default function Search({ isOpen = false, onClose }) {
                   <form onSubmit={(e) => e.preventDefault()}>
                     <input type="text" placeholder="Your Keywords..." />
                     <button type="submit">
-                      <i className="fa fa-search"></i>
+                      <i className="fa-solid fa-magnifying-glass"></i>
                     </button>
                   </form>
                 </div>
