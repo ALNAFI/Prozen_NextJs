@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect, useRef } from "react";
 import { useForm as useReactHookForm } from "react-hook-form";
 export const useInputForm = ({ onSubmit: customSubmit, delay = 2000 } = {}) => {
